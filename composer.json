@@ -1,0 +1,63 @@
+{
+    "name": "jooservices/jooagent",
+    "description": "Generate random user agent",
+    "type": "library",
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "license": "proprietary",
+    "bin": [
+      "bin/update-browser-versions.php"
+    ],
+    "authors": [
+      {
+        "name": "Viet Vu",
+        "email": "viet@jooservices.example"
+      }
+    ],
+    "require": {
+      "php": "^8.4"
+    },
+    "require-dev": {
+      "laravel/pint": "^1.17",
+      "phpmd/phpmd": "^2.15",
+      "phpstan/phpstan": "^1.11",
+      "phpunit/phpunit": "12.*",
+      "squizlabs/php_codesniffer": "^3.10"
+    },
+    "suggest": {
+      "ext-mongodb": "Required for MongoDB logging driver",
+      "ext-redis": "Required for Redis cache driver"
+    },
+    "autoload": {
+      "psr-4": {
+        "JOOservices\\Client\\": "src/",
+        "JOOservices\\Client\\Tests\\": "tests/"
+      }
+    },
+    "scripts": {
+      "lint": [
+        "@lint:pint",
+        "@lint:test",
+        "@lint:phpcs"
+      ],
+      "lint:pint": "vendor/bin/pint",
+      "lint:test": "vendor/bin/pint --test",
+      "lint:phpcs": "vendor/bin/phpcs",
+      "lint:phpcs:fix": "vendor/bin/phpcbf",
+      "analyse": [
+        "@analyse:phpstan",
+        "@analyse:phpmd"
+      ],
+      "analyse:phpstan": "vendor/bin/phpstan analyse",
+      "analyse:phpmd": "@php -d error_reporting=E_ALL\\&~E_DEPRECATED\\&~E_USER_DEPRECATED vendor/bin/phpmd src xml phpmd.xml",
+      "migrate:all": "php bin/migrate_all.php mysql \"mysql:host=127.0.0.1;port=3306;dbname=jooclient\" root root"
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "JOOservices\\Client\\Providers\\JooclientServiceProvider"
+        ]
+      }
+    }
+  }
+  

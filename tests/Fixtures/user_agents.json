@@ -1,0 +1,24 @@
+[
+  {
+    "tags": ["desktop", "linux"],
+    "operating_system": {
+      "slug": "linux",
+      "name": "Linux",
+      "token": "X11; Linux",
+      "versions": ["22.04"]
+    },
+    "device": {
+      "slug": "linux-desktop",
+      "name": "Linux Desktop",
+      "descriptor": "X11; Linux x86_64",
+      "type": "desktop"
+    },
+    "browser": {
+      "slug": "firefox",
+      "name": "Firefox",
+      "token": "Firefox",
+      "versions": ["122.0"]
+    },
+    "pattern": "Mozilla/5.0 ({device_descriptor}) Gecko/20100101 {browser_token}/{browser_version}"
+  }
+]

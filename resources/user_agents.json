@@ -1,0 +1,46 @@
+[
+  {
+    "tags": ["console", "nintendo", "switch"],
+    "operating_system": {
+      "slug": "nintendo-switch",
+      "name": "Nintendo Switch",
+      "token": "Nintendo Switch",
+      "versions": ["16.0", "17.0"]
+    },
+    "device": {
+      "slug": "switch",
+      "name": "Nintendo Switch",
+      "descriptor": "Nintendo Switch",
+      "type": "console"
+    },
+    "browser": {
+      "slug": "switch-browser",
+      "name": "Nintendo Browser",
+      "token": "NintendoBrowser",
+      "versions": ["10.0", "11.0"]
+    },
+    "pattern": "Mozilla/5.0 ({device_descriptor}; {os_token} {os_version}) AppleWebKit/601.6 (KHTML, like Gecko) {browser_token}/{browser_version}"
+  },
+  {
+    "tags": ["bot", "crawler", "bing"],
+    "operating_system": {
+      "slug": "bingbot-linux",
+      "name": "Linux (Bingbot)",
+      "token": "Linux; Android",
+      "versions": ["12", "13"]
+    },
+    "device": {
+      "slug": "bingbot-mobile",
+      "name": "Bingbot Mobile",
+      "descriptor": "SAMSUNG SM-G991B",
+      "type": "bot"
+    },
+    "browser": {
+      "slug": "bingbot",
+      "name": "Bingbot",
+      "token": "Chrome",
+      "versions": ["119.0.6045.159", "120.0.6099.199"]
+    },
+    "pattern": "Mozilla/5.0 (Linux; {os_token} {os_version}; {device_descriptor}) AppleWebKit/537.36 (KHTML, like Gecko) {browser_token}/{browser_version} Mobile Safari/537.36 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"
+  }
+]
